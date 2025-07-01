@@ -66,14 +66,7 @@ app.use('*all', async (req, res) => {
 });
 
 
-if (!isProduction) {
-    // Start http server
-    app.listen(port, () => {
-        console.log(`Server started at http://localhost:${port}`);
-    });
-}
-
-// Vercel serverless function handler
-export default (req, res) => {
-    app(req, res);
-};
+// Start http server
+app.listen(port, () => {
+    console.log(`Server started at http://localhost:${port}`);
+});
